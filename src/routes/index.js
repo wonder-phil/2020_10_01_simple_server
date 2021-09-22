@@ -4,9 +4,6 @@ const router = express.Router();
 
 function no_cors_setup(res) {
 
-  //Access-Control-Allow-Origin
-  //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5000');
-  //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.setHeader('Access-Control-Allow-Origin', '*');
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -21,15 +18,15 @@ function no_cors_setup(res) {
 
 /*
  *
- * curl http://localhost:3001/btc_date_equal?date=2020-05
+ * curl http://localhost:3001/hello?date=2021-09-22
 */
-router.get('/btc_date_equal', async (req,res, next) => {
+router.get('/hello', async (req,res, next) => {
   no_cors_setup(res);
   try {
 	
 	console.log("date: " + req.query.date);
 	
-      res.json({ "test" : "value" } );
+      res.json({ "test" : "Good Day!" } );
   } catch(e) {
     console.log(e);
     console.log('Error in query');
